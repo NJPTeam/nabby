@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-adsense-account" content="ca-pub-2592778451180424">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nabby vs youtubedl-material — minimal grabber vs full archive manager</title>
+<meta name="description" content="Nabby vs youtubedl-material: a minimal yt-dlp web UI compared to a full-featured self-hosted archive manager with subscriptions and user accounts.">
+<link rel="canonical" href="https://nabby.pro/compare/nabby-vs-youtubedl-material">
+<meta name="theme-color" content="#1c1c20">
+<link rel="icon" type="image/svg+xml" href="/static/favicons/b-n.svg">
+<link rel="alternate icon" href="/static/favicon.png" type="image/png" sizes="32x32">
+
+<meta property="og:site_name" content="Nabby">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nabby.pro/compare/nabby-vs-youtubedl-material">
+<meta property="og:title" content="Nabby vs youtubedl-material">
+<meta property="og:description" content="Minimal grabber vs full archive manager — two very different self-hosted yt-dlp UIs.">
+<meta property="og:image" content="https://nabby.pro/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nabby vs youtubedl-material">
+<meta name="twitter:description" content="Minimal grabber vs full archive manager.">
+<meta name="twitter:image" content="https://nabby.pro/static/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="legal">
+
+<header class="nav">
+  <a href="/" class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Nabby</span>
+  </a>
+  <span class="nav-sub">Nabby vs youtubedl-material</span>
+</header>
+
+<main class="legal-main">
+  <h1>Nabby vs youtubedl-material</h1>
+  <p class="updated">A paste-and-go tool compared to a Plex-adjacent library for your downloads.</p>
+
+  <h2>The short version</h2>
+  <p><strong>youtubedl-material</strong> (ytdl-material) is a mature, feature-rich self-hosted media manager built around yt-dlp. It supports user accounts, subscriptions, playlists, and a long-running library. <strong>Nabby</strong> is a minimal single-user web UI with no persistence. Different products for different jobs.</p>
+
+  <h2>At a glance</h2>
+  <table class="legal-table">
+    <thead><tr><th></th><th>Nabby</th><th>youtubedl-material</th></tr></thead>
+    <tbody>
+      <tr><td>Scope</td><td>Grab one file</td><td>Manage a library</td></tr>
+      <tr><td>User accounts</td><td>No</td><td>Yes (multi-user)</td></tr>
+      <tr><td>Subscriptions / auto-download</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Playlist library</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Twitch/VOD support</td><td>Yes (via yt-dlp)</td><td>Yes</td></tr>
+      <tr><td>Resource footprint</td><td>~60 MB RAM</td><td>Heavier (Node + Angular + DB)</td></tr>
+      <tr><td>Setup complexity</td><td>Minimal</td><td>Moderate</td></tr>
+      <tr><td>File retention</td><td>1-hour TTL</td><td>Permanent library</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Choose youtubedl-material if…</h2>
+  <ul>
+    <li>You're building a permanent personal media library (YouTube-channel subscriptions, podcast archives, Twitch VOD collections).</li>
+    <li>You want multi-user access with per-user folders and playlists.</li>
+    <li>You want auto-download on new uploads from subscribed channels.</li>
+    <li>You enjoy the Plex-adjacent dashboard experience.</li>
+  </ul>
+
+  <h2>Choose Nabby if…</h2>
+  <ul>
+    <li>You don't want a library — you want a web form that calls yt-dlp.</li>
+    <li>You want files auto-deleted after use.</li>
+    <li>You run a lot of small VPSes and want each service to use ~60 MB RAM.</li>
+    <li>You don't want an account system, user management, or a database.</li>
+  </ul>
+
+  <h2>Honest notes</h2>
+  <p>youtubedl-material is a bigger product solving a bigger problem. If you want to archive thousands of videos across accounts and friends, use it. If you want a bookmark-style quick grab for one-off downloads, Nabby is simpler.</p>
+
+  <p class="back"><a href="/">← back to Nabby</a> · <a href="/faq">FAQ</a> · <a href="/about">About</a></p>
+</main>
+
+</body>
+</html>

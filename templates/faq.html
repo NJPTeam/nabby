@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-adsense-account" content="ca-pub-2592778451180424">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ — Nabby</title>
+<meta name="description" content="Frequently asked questions about Nabby — a self-hosted web UI for yt-dlp. Supported sites, YouTube policy, self-hosting, data retention, and more.">
+<link rel="canonical" href="https://nabby.pro/faq">
+<meta name="theme-color" content="#1c1c20">
+<link rel="icon" type="image/svg+xml" href="/static/favicons/b-n.svg">
+<link rel="alternate icon" href="/static/favicon.png" type="image/png" sizes="32x32">
+
+<meta property="og:site_name" content="Nabby">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nabby.pro/faq">
+<meta property="og:title" content="FAQ — Nabby">
+<meta property="og:description" content="Common questions about Nabby, a self-hosted web UI for yt-dlp.">
+<meta property="og:image" content="https://nabby.pro/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ — Nabby">
+<meta name="twitter:description" content="Common questions about Nabby, a self-hosted web UI for yt-dlp.">
+<meta name="twitter:image" content="https://nabby.pro/static/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is Nabby?","acceptedAnswer":{"@type":"Answer","text":"Nabby is a free, open-source, self-hostable web interface for yt-dlp. You paste a URL, pick a format, and download the file. It supports TikTok, Reddit, X (Twitter), Facebook, Vimeo, SoundCloud, Twitch, and most other sites yt-dlp handles."}},
+    {"@type":"Question","name":"Is Nabby free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The hosted version at nabby.pro is free and funded by advertising. The source code is open-source and you can self-host your own instance for free on any Linux server."}},
+    {"@type":"Question","name":"Does Nabby work with YouTube?","acceptedAnswer":{"@type":"Answer","text":"No. Nabby deliberately does not support YouTube. If you need YouTube downloads, use yt-dlp directly from the command line."}},
+    {"@type":"Question","name":"Is Nabby legal to use?","acceptedAnswer":{"@type":"Answer","text":"Downloading media you have the right to download — your own content, public-domain works, Creative Commons material, or content you're using under fair-use provisions like journalism, research, criticism, or archival — is legal in most jurisdictions. Nabby does not bypass paywalls or DRM. You are responsible for how you use the files you download."}},
+    {"@type":"Question","name":"How is Nabby different from yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"yt-dlp is a command-line tool. Nabby is a browser-based front-end that uses yt-dlp under the hood, so non-technical users can grab media without touching a terminal."}},
+    {"@type":"Question","name":"How is Nabby different from MeTube or youtubedl-material?","acceptedAnswer":{"@type":"Answer","text":"MeTube and youtubedl-material are self-hosted queue-based downloaders with persistent storage. Nabby is paste-and-grab: no queue, no database, no accounts, no retained files. Files are deleted from the server one hour after download."}},
+    {"@type":"Question","name":"How is Nabby different from cobalt.tools?","acceptedAnswer":{"@type":"Answer","text":"cobalt.tools is a hosted-only service. Nabby is both a hosted service (nabby.pro) and a self-hostable project you can run on your own server. Nabby supports a different site list — notably no YouTube — and runs on top of yt-dlp rather than cobalt's custom extractors."}},
+    {"@type":"Question","name":"Can I self-host Nabby?","acceptedAnswer":{"@type":"Answer","text":"Yes. Nabby is a small Python/Flask application. Clone the repository, run ./run.sh, and the UI is available at 127.0.0.1:5000."}},
+    {"@type":"Question","name":"Does Nabby keep my downloads?","acceptedAnswer":{"@type":"Answer","text":"No. Files are stored in a temporary directory and deleted one hour after your job completes. Nabby does not log IP addresses tied to downloads and does not use analytics."}},
+    {"@type":"Question","name":"What sites does Nabby support?","acceptedAnswer":{"@type":"Answer","text":"TikTok, Facebook, X (Twitter), Reddit, Vimeo, SoundCloud, and Twitch are explicitly allow-listed on the hosted instance at nabby.pro. On a self-hosted instance you can extend the allowlist to any site yt-dlp supports — thousands of sites in total."}}
+  ]
+}
+</script>
+</head>
+<body class="legal">
+
+<header class="nav">
+  <a href="/" class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Nabby</span>
+  </a>
+  <span class="nav-sub">FAQ</span>
+</header>
+
+<main class="legal-main">
+  <h1>Frequently asked questions</h1>
+  <p class="updated">Everything people actually ask us.</p>
+
+  <h2>What is Nabby?</h2>
+  <p>Nabby is a free, open-source, self-hostable web interface for yt-dlp. You paste a URL, pick a format, and download the file. It supports TikTok, Reddit, X (Twitter), Facebook, Vimeo, SoundCloud, Twitch, and most other sites yt-dlp handles.</p>
+
+  <h2>Is Nabby free?</h2>
+  <p>Yes. The hosted version at nabby.pro is free and funded by advertising. The source code is open-source and you can self-host your own instance for free on any Linux server.</p>
+
+  <h2>Does Nabby work with YouTube?</h2>
+  <p>No. Nabby deliberately does not support YouTube. Google actively enforces against YouTube downloaders (DMCA notices, lawsuits), while the other sites Nabby supports generally do not. If you need YouTube downloads, use <a href="https://github.com/yt-dlp/yt-dlp" rel="noopener">yt-dlp</a> directly from the command line.</p>
+
+  <h2>Is Nabby legal to use?</h2>
+  <p>Downloading media you have the right to download — your own content, public-domain works, Creative Commons material, or content you're using under fair-use provisions like journalism, research, criticism, or archival — is legal in most jurisdictions. Nabby does not bypass paywalls or DRM. You are responsible for how you use the files you download. See <a href="/terms">Terms</a>.</p>
+
+  <h2>How is Nabby different from yt-dlp?</h2>
+  <p>yt-dlp is a command-line tool. Nabby is a browser-based front-end that uses yt-dlp under the hood, so non-technical users can grab media without touching a terminal. See <a href="/compare/nabby-vs-ytdlp-cli">Nabby vs yt-dlp CLI</a>.</p>
+
+  <h2>How is Nabby different from MeTube or youtubedl-material?</h2>
+  <p>MeTube and youtubedl-material are self-hosted queue-based downloaders with persistent storage, aimed at building a local archive. Nabby is paste-and-grab: no queue, no database, no accounts, no retained files. Files are deleted from the server one hour after download. See <a href="/compare/nabby-vs-metube">Nabby vs MeTube</a> and <a href="/compare/nabby-vs-youtubedl-material">Nabby vs youtubedl-material</a>.</p>
+
+  <h2>How is Nabby different from cobalt.tools?</h2>
+  <p>cobalt.tools is a hosted-only service with its own extractors. Nabby is both a hosted service (nabby.pro) and a self-hostable project you can run on your own server, built on top of yt-dlp. Nabby supports a different site list — notably no YouTube. See <a href="/compare/nabby-vs-cobalt">Nabby vs cobalt.tools</a>.</p>
+
+  <h2>Can I self-host Nabby?</h2>
+  <p>Yes. Nabby is a small Python/Flask application. Clone the repository, run <code>./run.sh</code>, and the UI is available at <code>127.0.0.1:5000</code>. See the README on GitHub for production deployment with gunicorn behind nginx or Cloudflare Tunnel.</p>
+
+  <h2>Does Nabby keep my downloads?</h2>
+  <p>No. Files are stored in a temporary directory and deleted one hour after your job completes. Nabby does not log IP addresses tied to downloads and does not use analytics. See the <a href="/privacy">Privacy Policy</a> for exact retention periods.</p>
+
+  <h2>What sites does Nabby support?</h2>
+  <p>TikTok, Facebook, X (Twitter), Reddit, Vimeo, SoundCloud, and Twitch are explicitly allow-listed on the hosted instance at nabby.pro. On a self-hosted instance you can extend the allowlist to any site yt-dlp supports — thousands of sites in total.</p>
+
+  <p class="back"><a href="/">← back to Nabby</a></p>
+</main>
+
+</body>
+</html>

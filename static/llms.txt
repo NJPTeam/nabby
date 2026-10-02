@@ -1,0 +1,26 @@
+# Nabby
+
+> Nabby is a free, open-source, self-hostable web interface for yt-dlp. Paste a link from TikTok, Reddit, Vimeo, SoundCloud, Twitch, X, Facebook, or any of the thousands of other sites yt-dlp supports; pick a format; download the file. Nabby does not support YouTube by design, does not host files, does not bypass paywalls, does not require an account, and deletes downloads one hour after they complete.
+
+## About
+
+- [About Nabby](https://nabby.pro/about): Why Nabby exists, who it's for, and how it compares to similar tools.
+- [FAQ](https://nabby.pro/faq): Common questions about Nabby, including supported sites, legality, and self-hosting.
+
+## Compare
+
+- [Nabby vs cobalt.tools](https://nabby.pro/compare/nabby-vs-cobalt)
+- [Nabby vs MeTube](https://nabby.pro/compare/nabby-vs-metube)
+- [Nabby vs yt-dlp-webui](https://nabby.pro/compare/nabby-vs-ytdlp-webui)
+- [Nabby vs youtubedl-material](https://nabby.pro/compare/nabby-vs-youtubedl-material)
+- [Nabby vs yt-dlp (CLI)](https://nabby.pro/compare/nabby-vs-ytdlp-cli)
+
+## Source
+
+- [GitHub repository](https://github.com/NJPTeam/nabby): source code, Dockerfile, deployment guide.
+
+## Policies
+
+- [Terms of Service](https://nabby.pro/terms)
+- [Privacy Policy](https://nabby.pro/privacy)
+- [DMCA Policy](https://nabby.pro/dmca)

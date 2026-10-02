@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Favicon picker — Nabby</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+  .fav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .fav-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .fav-card h3 { margin: 0 0 12px; font-size: 14px; color: var(--muted-2); }
+  .fav-sizes { display: flex; justify-content: center; align-items: flex-end; gap: 14px; margin-bottom: 12px; }
+  .fav-sizes img { background: #fff; padding: 2px; border-radius: 2px; }
+  .fav-sizes .dark { background: #0f1115; }
+  .fav-sizes .label { font-size: 10px; color: var(--muted); text-align: center; margin-top: 4px; font-family: "JetBrains Mono", monospace; }
+  .fav-sizes figure { margin: 0; }
+  .fav-big { display: block; margin: 0 auto; }
+  .fav-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+  .fav-mock {
+    display: flex; align-items: center; gap: 8px;
+    background: #2a2a30;
+    border: 1px solid var(--line);
+    border-radius: 8px 8px 0 0;
+    padding: 8px 12px;
+    margin: 14px auto 0;
+    width: fit-content;
+    font-size: 12px;
+    color: var(--muted-2);
+  }
+  .fav-mock img { width: 16px; height: 16px; }
+</style>
+</head>
+<body class="legal">
+
+<header class="nav">
+  <a href="/" class="brand">
+    <span class="brand-mark"></span>
+    <span>Nabby</span>
+  </a>
+  <span class="nav-sub">favicon preview</span>
+</header>
+
+<main class="legal-main" style="max-width: 900px;">
+  <h1>Pick a favicon</h1>
+  <p>Each option shown at browser-tab size (16px, 32px) and large. The grey bar mimics how it looks in a browser tab.</p>
+
+  <div class="fav-grid">
+    {% for id, name, note in options %}
+    <div class="fav-card">
+      <h3>{{ name }}</h3>
+      <img class="fav-big" src="/static/favicons/{{ id }}.svg" width="96" height="96" alt="">
+      <div class="fav-sizes">
+        <figure><img src="/static/favicons/{{ id }}.svg" width="16" height="16" alt=""><div class="label">16</div></figure>
+        <figure><img src="/static/favicons/{{ id }}.svg" width="32" height="32" alt=""><div class="label">32</div></figure>
+        <figure><img src="/static/favicons/{{ id }}.svg" width="48" height="48" alt=""><div class="label">48</div></figure>
+      </div>
+      <div class="fav-mock">
+        <img src="/static/favicons/{{ id }}.svg" alt="">
+        <span>Nabby — grab video…</span>
+      </div>
+      <div class="fav-note">{{ note }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <p class="back" style="margin-top: 48px;"><a href="/">← back to Nabby</a></p>
+</main>
+
+</body>
+</html>

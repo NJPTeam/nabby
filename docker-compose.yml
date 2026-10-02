@@ -1,0 +1,13 @@
+services:
+  nabby:
+    image: ghcr.io/njpteam/nabby:latest
+    # or build from source:
+    # build: .
+    container_name: nabby
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./downloads:/app/downloads
+    environment:
+      - TZ=UTC

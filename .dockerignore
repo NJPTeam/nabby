@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.github/
+downloads/
+*.log
+.env
+README.md
+CONTRIBUTING.md
+LICENSE
+docker-compose.yml
+Dockerfile
+.dockerignore
+CLAUDE.md

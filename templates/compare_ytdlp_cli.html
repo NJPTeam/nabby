@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-adsense-account" content="ca-pub-2592778451180424">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nabby vs yt-dlp (CLI) — when do you need a UI?</title>
+<meta name="description" content="Nabby vs yt-dlp command line: when a web UI is worth the extra layer, and when the CLI is the right answer. Honest trade-offs between the engine and its wrapper.">
+<link rel="canonical" href="https://nabby.pro/compare/nabby-vs-ytdlp-cli">
+<meta name="theme-color" content="#1c1c20">
+<link rel="icon" type="image/svg+xml" href="/static/favicons/b-n.svg">
+<link rel="alternate icon" href="/static/favicon.png" type="image/png" sizes="32x32">
+
+<meta property="og:site_name" content="Nabby">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nabby.pro/compare/nabby-vs-ytdlp-cli">
+<meta property="og:title" content="Nabby vs yt-dlp (CLI)">
+<meta property="og:description" content="When a web UI is worth the extra layer, and when the CLI is the right answer.">
+<meta property="og:image" content="https://nabby.pro/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nabby vs yt-dlp (CLI)">
+<meta name="twitter:description" content="When a web UI is worth the extra layer, and when the CLI is the right answer.">
+<meta name="twitter:image" content="https://nabby.pro/static/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="legal">
+
+<header class="nav">
+  <a href="/" class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Nabby</span>
+  </a>
+  <span class="nav-sub">Nabby vs yt-dlp (CLI)</span>
+</header>
+
+<main class="legal-main">
+  <h1>Nabby vs yt-dlp (CLI)</h1>
+  <p class="updated">The engine versus its wrapper. When each one is the right answer.</p>
+
+  <h2>The short version</h2>
+  <p><strong>yt-dlp</strong> is the command-line engine. It is more flexible than any UI, including Nabby. <strong>Nabby</strong> is a web form that calls yt-dlp. It exists so you don't have to open a terminal or remember flags.</p>
+
+  <h2>At a glance</h2>
+  <table class="legal-table">
+    <thead><tr><th></th><th>Nabby</th><th>yt-dlp CLI</th></tr></thead>
+    <tbody>
+      <tr><td>Interface</td><td>Browser-based web UI</td><td>Command line</td></tr>
+      <tr><td>Flexibility</td><td>Common cases only</td><td>Full — every yt-dlp flag</td></tr>
+      <tr><td>Scripting / automation</td><td>No</td><td>Yes (bash, cron, systemd)</td></tr>
+      <tr><td>Non-technical users</td><td>Yes</td><td>No</td></tr>
+      <tr><td>Site support</td><td>Allowlisted (hosted) / all (self-hosted)</td><td>All yt-dlp sites</td></tr>
+      <tr><td>Install footprint</td><td>Flask + yt-dlp + ffmpeg</td><td>Single binary + ffmpeg</td></tr>
+      <tr><td>Where it runs</td><td>A server</td><td>Your laptop</td></tr>
+      <tr><td>Learning curve</td><td>Zero</td><td>Hours</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Choose yt-dlp CLI if…</h2>
+  <ul>
+    <li>You're scripting bulk downloads, archiving channels, or integrating with other tools.</li>
+    <li>You need obscure flags: format selection by codec, remuxing, post-processors, cookie files, custom headers.</li>
+    <li>You're comfortable in a terminal and don't want to run a web server.</li>
+    <li>You want the maximum possible flexibility.</li>
+  </ul>
+
+  <h2>Choose Nabby if…</h2>
+  <ul>
+    <li>You want to send a link to a non-technical friend or family member to download themselves.</li>
+    <li>You want to grab something from your phone's browser without SSHing anywhere.</li>
+    <li>You have "future you in two years who forgot every flag" in mind.</li>
+    <li>You want a UI with a format picker, an audio-only toggle, and a progress bar — without maintaining a desktop app.</li>
+  </ul>
+
+  <h2>Honest notes</h2>
+  <p>Every Nabby user is also a potential yt-dlp CLI user. We won't pretend otherwise. If you know your way around <code>yt-dlp -f "bv*[height&lt;=1080]+ba/b" --write-sub --sub-langs en.*</code>, the CLI is strictly more powerful. Nabby's whole value proposition is removing that cognitive load for the 90% of downloads where it isn't needed.</p>
+
+  <p class="back"><a href="/">← back to Nabby</a> · <a href="/faq">FAQ</a> · <a href="/about">About</a></p>
+</main>
+
+</body>
+</html>

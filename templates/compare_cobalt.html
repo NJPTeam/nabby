@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-adsense-account" content="ca-pub-2592778451180424">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nabby vs cobalt.tools — which should you use?</title>
+<meta name="description" content="Nabby vs cobalt.tools: a self-hostable yt-dlp web UI compared to a hosted-only extractor service. Honest trade-offs, when to choose which.">
+<link rel="canonical" href="https://nabby.pro/compare/nabby-vs-cobalt">
+<meta name="theme-color" content="#1c1c20">
+<link rel="icon" type="image/svg+xml" href="/static/favicons/b-n.svg">
+<link rel="alternate icon" href="/static/favicon.png" type="image/png" sizes="32x32">
+
+<meta property="og:site_name" content="Nabby">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nabby.pro/compare/nabby-vs-cobalt">
+<meta property="og:title" content="Nabby vs cobalt.tools">
+<meta property="og:description" content="Self-hostable yt-dlp UI vs hosted-only extractor service. Honest trade-offs.">
+<meta property="og:image" content="https://nabby.pro/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nabby vs cobalt.tools">
+<meta name="twitter:description" content="Self-hostable yt-dlp UI vs hosted-only extractor service.">
+<meta name="twitter:image" content="https://nabby.pro/static/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="legal">
+
+<header class="nav">
+  <a href="/" class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Nabby</span>
+  </a>
+  <span class="nav-sub">Nabby vs cobalt.tools</span>
+</header>
+
+<main class="legal-main">
+  <h1>Nabby vs cobalt.tools</h1>
+  <p class="updated">A paste-and-grab comparison for people choosing a video downloader.</p>
+
+  <h2>The short version</h2>
+  <p><strong>cobalt.tools</strong> is a sleek hosted service built on its own extractors. <strong>Nabby</strong> is a self-hostable web UI for <a href="https://github.com/yt-dlp/yt-dlp" rel="noopener">yt-dlp</a>. The two overlap in audience but differ in nearly everything else that matters.</p>
+
+  <h2>At a glance</h2>
+  <table class="legal-table">
+    <thead><tr><th></th><th>Nabby</th><th>cobalt.tools</th></tr></thead>
+    <tbody>
+      <tr><td>Self-hostable</td><td>Yes</td><td>No</td></tr>
+      <tr><td>Extractor engine</td><td>yt-dlp</td><td>Custom (cobalt)</td></tr>
+      <tr><td>YouTube support</td><td>No (by design)</td><td>Varies by instance / jurisdiction</td></tr>
+      <tr><td>Account required</td><td>No</td><td>No</td></tr>
+      <tr><td>Open source</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Ads</td><td>Hosted instance only</td><td>No</td></tr>
+      <tr><td>File retention on server</td><td>1 hour</td><td>Pass-through</td></tr>
+      <tr><td>Supported sites breadth</td><td>yt-dlp's full catalog (if self-hosted)</td><td>Hand-curated list</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Choose cobalt.tools if…</h2>
+  <ul>
+    <li>You want a single hosted site, no setup, and don't care about running your own instance.</li>
+    <li>You specifically need cobalt-supported sites that aren't in yt-dlp's catalog.</li>
+    <li>You value cobalt's minimal, zero-ad hosted UI (which it has, and it's good).</li>
+  </ul>
+
+  <h2>Choose Nabby if…</h2>
+  <ul>
+    <li>You want to run your own instance — on a homelab server, inside a container, or behind a tunnel — and keep your downloads on your own infrastructure.</li>
+    <li>You want yt-dlp's breadth of site support (TikTok, Reddit, X, Vimeo, SoundCloud, Twitch, and thousands more on a self-hosted instance).</li>
+    <li>You prefer a general-purpose tool stacked on a mature library (yt-dlp has thousands of contributors and years of maintenance) over a custom extractor codebase.</li>
+    <li>You're an archivist, journalist, or researcher who wants the files to stay on your box, not pass through a third-party service.</li>
+  </ul>
+
+  <h2>Honest notes</h2>
+  <p>cobalt.tools is excellent at what it does. The teams behind the two projects are not competing — different philosophies, different trade-offs, different users. If you can run both, you'll probably reach for cobalt for quick one-offs and Nabby for self-hosted or sites cobalt doesn't support. On the hosted instance of Nabby, we deliberately do not support YouTube; cobalt's YouTube support changes over time based on their own legal and technical situation.</p>
+
+  <p class="back"><a href="/">← back to Nabby</a> · <a href="/faq">FAQ</a> · <a href="/about">About</a></p>
+</main>
+
+</body>
+</html>

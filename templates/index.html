@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-adsense-account" content="ca-pub-2592778451180424">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nabby — self-hosted web UI for yt-dlp</title>
+<meta name="description" content="Nabby is a free, open-source, self-hostable web UI for yt-dlp. Paste a link from TikTok, Reddit, Vimeo, SoundCloud, Twitch, X, and more. Pick a format. Get the file. No account, no YouTube, no stored files.">
+<link rel="canonical" href="https://nabby.pro/">
+<meta name="theme-color" content="#1c1c20">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/svg+xml" href="/static/favicons/b-n.svg">
+<link rel="alternate icon" href="/static/favicon.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/static/favicons/b-n.svg">
+
+<meta property="og:site_name" content="Nabby">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nabby.pro/">
+<meta property="og:title" content="Nabby — self-hosted web UI for yt-dlp">
+<meta property="og:description" content="Paste a link, pick a format, download. A clean web interface for yt-dlp. Supports TikTok, Reddit, X, Vimeo, SoundCloud, Twitch and more.">
+<meta property="og:image" content="https://nabby.pro/static/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nabby — self-hosted web UI for yt-dlp">
+<meta name="twitter:description" content="Paste a link, pick a format, download. Supports TikTok, Reddit, X, Vimeo, SoundCloud, Twitch and more.">
+<meta name="twitter:image" content="https://nabby.pro/static/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://nabby.pro/#website",
+      "url": "https://nabby.pro/",
+      "name": "Nabby",
+      "description": "Open-source web UI for yt-dlp.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Nabby",
+      "alternateName": "Nabby — self-hosted web UI for yt-dlp",
+      "url": "https://nabby.pro/",
+      "description": "A free, open-source, self-hostable web interface for yt-dlp. Paste a link from TikTok, Reddit, Vimeo, SoundCloud, Twitch, X, and more; pick a format; download the file.",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Video Downloader",
+      "operatingSystem": "Any (web browser); self-hostable on Linux",
+      "browserRequirements": "Requires JavaScript. Modern browser.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "softwareHelp": "https://nabby.pro/about",
+      "featureList": [
+        "Paste-and-grab video downloads from TikTok, Facebook, X, Reddit, Vimeo, SoundCloud, Twitch",
+        "Audio-only extraction (mp3, m4a, opus, wav)",
+        "Format and quality selection up to 1080p",
+        "No account required",
+        "Self-hostable open-source backend",
+        "Files deleted one hour after download"
+      ],
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "Organization",
+      "name": "Nabby",
+      "url": "https://nabby.pro",
+      "logo": "https://nabby.pro/static/favicons/b-n.svg",
+      "email": "njpteam.official@gmail.com",
+      "sameAs": [
+        "https://github.com/NJPTeam/nabby"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is Nabby?","acceptedAnswer":{"@type":"Answer","text":"Nabby is a free, open-source, self-hostable web interface for yt-dlp. You paste a URL, pick a format, and download the file. It supports TikTok, Reddit, X (Twitter), Facebook, Vimeo, SoundCloud, Twitch, and most other sites yt-dlp handles."}},
+        {"@type":"Question","name":"Does Nabby work with YouTube?","acceptedAnswer":{"@type":"Answer","text":"No. Nabby deliberately does not support YouTube. If you need YouTube downloads, use yt-dlp directly from the command line."}},
+        {"@type":"Question","name":"How is Nabby different from MeTube or youtubedl-material?","acceptedAnswer":{"@type":"Answer","text":"MeTube and youtubedl-material are self-hosted queue-based downloaders with persistent storage. Nabby is paste-and-grab: no queue, no database, no accounts, no retained files. Files are deleted from the server one hour after download."}},
+        {"@type":"Question","name":"How is Nabby different from cobalt.tools?","acceptedAnswer":{"@type":"Answer","text":"cobalt.tools is a hosted-only service. Nabby is both a hosted service and a self-hostable project you can run on your own server. Nabby runs on top of yt-dlp and intentionally does not support YouTube."}},
+        {"@type":"Question","name":"Can I self-host Nabby?","acceptedAnswer":{"@type":"Answer","text":"Yes. Nabby is a Python/Flask application. Clone the repository, run ./run.sh, and the UI is available at 127.0.0.1:5000."}},
+        {"@type":"Question","name":"Does Nabby keep my downloads?","acceptedAnswer":{"@type":"Answer","text":"No. Files are stored in a temporary directory and deleted one hour after your job completes."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<!-- Cookie consent (hard wall) -->
+<div id="consent-overlay" class="consent-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+  <div class="consent-dialog">
+    <p id="consent-title" class="consent-title">Before you continue</p>
+    <p>Nabby is free to use. To keep the servers running, we show ads from third-party networks and use Google Analytics to understand aggregate traffic. These services set cookies and collect some data about you (IP, device, approximate location, interactions). See our <a href="/privacy">Privacy Policy</a> for the full breakdown.</p>
+    <p>You can accept and continue, or decline. If you decline, Nabby cannot run for you — the Service is funded entirely by advertising. You can also <a href="/about">self-host your own instance</a> at no cost.</p>
+    <div class="consent-actions">
+      <button id="consent-accept" class="btn btn-primary">Accept &amp; continue</button>
+      <button id="consent-decline" class="btn btn-ghost">Decline</button>
+    </div>
+    <p class="consent-foot">
+      <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/dmca">DMCA</a>
+    </p>
+  </div>
+</div>
+
+<div id="consent-blocked" class="consent-blocked hidden" role="dialog" aria-modal="true" aria-labelledby="blocked-title">
+  <div class="consent-dialog">
+    <p id="blocked-title" class="consent-title">Consent required</p>
+    <p>You declined cookie consent. Nabby cannot be used without accepting advertising cookies, because the Service is funded entirely by advertising.</p>
+    <p>Your options:</p>
+    <ul>
+      <li>Reconsider and <button id="consent-reopen" class="link-btn">accept now</button> to use the Service.</li>
+      <li><a href="/about">Self-host your own instance</a> — free, no ads, full source available.</li>
+      <li>Simply close this page.</li>
+    </ul>
+  </div>
+</div>
+
+
+<header class="nav">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Nabby</span>
+  </div>
+  <span class="nav-sub">a video downloader</span>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Download videos from TikTok, Reddit, X, SoundCloud and more.</h1>
+    <p>A clean, open-source web interface for yt-dlp. Paste a link. Pick a format. Get the file. <a href="/about" class="hero-link">How it works →</a></p>
+    <ul class="platforms">
+      <li>TikTok</li>
+      <li>Facebook</li>
+      <li>X</li>
+      <li>Reddit</li>
+      <li>Vimeo</li>
+      <li>SoundCloud</li>
+      <li>Twitch</li>
+      <li class="more">+ more</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <label for="urls" class="label">URLs</label>
+    <textarea id="urls" rows="3" spellcheck="false" placeholder="https://…"></textarea>
+    <div class="row">
+      <button id="probe-btn" class="btn btn-ghost">Inspect</button>
+      <span id="probe-status" class="status"></span>
+    </div>
+  </section>
+
+  <section id="probe-result" class="block hidden">
+    <div class="label">Preview</div>
+    <div id="preview" class="preview"></div>
+
+    <div class="controls">
+      <div class="control">
+        <span class="label">Format</span>
+        <div class="segmented" role="radiogroup">
+          <label><input type="radio" name="mode" value="video" checked><span>Video</span></label>
+          <label><input type="radio" name="mode" value="audio"><span>Audio</span></label>
+        </div>
+      </div>
+
+      <div class="control" id="video-opts">
+        <label for="quality" class="label">Quality</label>
+        <select id="quality">
+          <option value="bv*+ba/b">Best available</option>
+          <option value="bv*[height&lt;=1080]+ba/b[height&lt;=1080]">1080p</option>
+          <option value="bv*[height&lt;=720]+ba/b[height&lt;=720]">720p</option>
+          <option value="bv*[height&lt;=480]+ba/b[height&lt;=480]">480p</option>
+          <option value="worst">Smallest</option>
+        </select>
+      </div>
+
+      <div class="control hidden" id="audio-opts">
+        <label for="audio-format" class="label">Codec</label>
+        <select id="audio-format">
+          <option value="mp3">mp3</option>
+          <option value="m4a">m4a</option>
+          <option value="opus">opus</option>
+          <option value="wav">wav</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="download-btn" class="btn btn-primary">Download</button>
+  </section>
+
+  <section id="progress-section" class="block hidden">
+    <div class="label">Progress</div>
+    <div id="progress-list"></div>
+    <div id="done-list" class="hidden">
+      <div class="label label-done">Files</div>
+      <ul id="files"></ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <nav class="foot-links">
+    <a href="/about">About</a>
+    <a href="/faq">FAQ</a>
+    <a href="/terms">Terms</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/dmca">DMCA</a>
+    <a href="#" id="consent-prefs">Cookie preferences</a>
+  </nav>
+  <span class="foot-meta">Nabby — open-source · self-hostable</span>
+</footer>
+
+<script src="/static/consent.js"></script>
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

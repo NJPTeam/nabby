@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-adsense-account" content="ca-pub-2592778451180424">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Nabby — a self-hosted web UI for yt-dlp</title>
+<meta name="description" content="Nabby is a lightweight open-source web interface for yt-dlp, built for journalists, researchers, archivists, and self-hosters who need to save public media from the open web.">
+<link rel="canonical" href="https://nabby.pro/about">
+<meta name="theme-color" content="#1c1c20">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/svg+xml" href="/static/favicons/b-n.svg">
+<link rel="alternate icon" href="/static/favicon.png" type="image/png" sizes="32x32">
+
+<meta property="og:site_name" content="Nabby">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nabby.pro/about">
+<meta property="og:title" content="About Nabby — a general-purpose archival utility">
+<meta property="og:description" content="Why Nabby exists, who it's for, and what it isn't. A clean, honest web interface for yt-dlp.">
+<meta property="og:image" content="https://nabby.pro/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Nabby">
+<meta name="twitter:description" content="A general-purpose archival utility for the open web. Open-source web UI for yt-dlp.">
+<meta name="twitter:image" content="https://nabby.pro/static/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nabby",
+  "url": "https://nabby.pro",
+  "logo": "https://nabby.pro/static/favicons/b-n.svg",
+  "email": "njpteam.official@gmail.com",
+  "sameAs": [
+    "https://github.com/NJPTeam/nabby"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="legal">
+
+<header class="nav">
+  <a href="/" class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Nabby</span>
+  </a>
+  <span class="nav-sub">About</span>
+</header>
+
+<main class="legal-main">
+  <h1>About Nabby</h1>
+  <p class="updated">A general-purpose archival utility for the open web.</p>
+
+  <p class="lede"><strong>Nabby is a free, open-source, self-hostable web interface for yt-dlp.</strong> It lets you paste a link from TikTok, Facebook, X (Twitter), Reddit, Vimeo, SoundCloud, Twitch, or any of the thousands of other sites yt-dlp supports, and download the video or audio in your chosen format. Nabby runs in your browser against a lightweight Python/Flask backend. It is designed for journalists, researchers, archivists, educators, and self-hosters who need a simple way to save public media before it disappears. Nabby does <strong>not</strong> support YouTube, does not host files, does not bypass paywalls or DRM, and does not require an account. Downloads are deleted from the server one hour after they complete. The source code is available under an open-source license, so you can run your own instance on any Linux server.</p>
+
+  <h2>What it is</h2>
+  <p>Nabby is a lightweight, open-source web interface for <a href="https://github.com/yt-dlp/yt-dlp" rel="noopener">yt-dlp</a>, the widely used command-line program that retrieves publicly accessible media from thousands of websites. Nabby exists to make yt-dlp approachable: paste a link, pick a format, get the file. Nothing more.</p>
+
+  <h2>How Nabby compares to similar tools</h2>
+  <p>Nabby is a web UI for <code>yt-dlp</code>, the same engine used by projects like <a href="/compare/nabby-vs-metube">MeTube</a>, <a href="/compare/nabby-vs-youtubedl-material">youtubedl-material</a>, and <a href="/compare/nabby-vs-ytdlp-webui">yt-dlp-webui</a>. Compared to those projects, Nabby focuses on a single-user, zero-queue, paste-and-grab workflow with no database, no login, and no persistent storage. Nabby is intentionally not comparable to <a href="/compare/nabby-vs-cobalt">cobalt.tools</a>, which is a hosted service with a different legal and architectural posture — Nabby is self-hostable, cobalt is not. See the <a href="/faq">FAQ</a> for more.</p>
+
+  <h2>Why it exists</h2>
+  <p>Media on the social web is unstable. Posts are deleted. Accounts are suspended. Platforms change their terms, change their business models, or shut down entirely. Journalists lose primary sources. Researchers lose their citations. Everyday people lose the videos their friends and family posted. The ability to keep a local copy of publicly posted material you have a lawful interest in is a basic requirement of a functioning record.</p>
+  <p>Nabby is a small contribution to that: a clean, honest tool for people who want to save things.</p>
+
+  <h2>Who it's for</h2>
+  <ul>
+    <li><strong>Journalists and investigators</strong> preserving public statements, livestreams, and primary-source footage before they are edited or deleted.</li>
+    <li><strong>Academic researchers</strong> studying media, political communication, online movements, and digital culture.</li>
+    <li><strong>Archivists</strong> working on link-rot, dead-platform preservation, and the long-term record of the public internet.</li>
+    <li><strong>Educators and students</strong> saving lectures, tutorials, demonstrations, and openly licensed material for study.</li>
+    <li><strong>Creators</strong> exporting their own posts from platforms they are leaving, consolidating backups across accounts, or converting formats for accessibility.</li>
+    <li><strong>Self-hosters and privacy-focused users</strong> who prefer a tool they run themselves over the usual tangle of download sites.</li>
+    <li><strong>Everyday people</strong> who want to keep a copy of a video a relative posted, a clip they want to share offline, or a piece of media they produced.</li>
+  </ul>
+
+  <h2>What Nabby is not</h2>
+  <ul>
+    <li><strong>Not a hosting service.</strong> Nabby does not store, catalog, or redistribute content. Files are deleted shortly after you fetch them.</li>
+    <li><strong>Not a piracy tool.</strong> Nabby does not bypass paywalls, DRM, or authentication. It accesses only material that is already publicly reachable.</li>
+    <li><strong>Not a scraping service.</strong> Nabby is designed for individual, interactive use.</li>
+    <li><strong>Supported by advertising.</strong> To keep Nabby free and running, the Service displays ads from third-party networks. We keep placements minimal and non-intrusive. We do not sell or share your personal data; see the <a href="/privacy">Privacy Policy</a> for exactly what the ad networks receive.</li>
+    <li><strong>Not a YouTube downloader.</strong> We deliberately do not support YouTube to avoid conflict with Google's active enforcement; many excellent tools exist for that if you need it.</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <p>Nabby runs on a server. When you submit a URL, the server uses yt-dlp to open a direct connection to the source site, retrieve the media, optionally convert it (for audio extraction or format normalization), and hand it back to you via a one-time link. The file is removed from the server shortly after. The server does not keep a copy, does not index what you fetched, and does not log the URL beyond the duration of the job.</p>
+
+  <h2>Open source</h2>
+  <p>Nabby is open source. The code is public, the behavior is auditable, and anyone can host their own instance. The design intent — "a clean interface around a general-purpose tool" — is deliberate and documented. If you want to inspect what the service does, read the source. If you prefer not to use a hosted instance, run your own.</p>
+
+  <h2>Our position on fair use</h2>
+  <p>Downloading publicly posted media has well-established lawful purposes in nearly every jurisdiction: personal study, archival, journalism, research, commentary, criticism, parody, accessibility, and preservation. Fair use, fair dealing, and equivalent doctrines protect many of these uses. Nabby is a general-purpose tool for these lawful uses. Whether a specific download is lawful depends on the content, the use, and the user's jurisdiction — that judgment belongs to the user, not the tool.</p>
+  <p>We do not endorse, encourage, or profit from infringing use. We respond to valid takedown requests. We block users who abuse the Service. We publish our <a href="/dmca">DMCA process</a>, our <a href="/privacy">Privacy Policy</a>, and our <a href="/terms">Terms of Service</a> openly.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:njpteam.official@gmail.com">njpteam.official@gmail.com</a></p>
+
+  <p class="back"><a href="/">← back to Nabby</a></p>
+</main>
+
+</body>
+</html>

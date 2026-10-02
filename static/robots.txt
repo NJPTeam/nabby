@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /files/
+Disallow: /favicons
+
+Sitemap: https://nabby.pro/sitemap.xml

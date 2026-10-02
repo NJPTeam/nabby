@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-adsense-account" content="ca-pub-2592778451180424">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nabby vs yt-dlp-webui — minimal Python vs feature-rich Go</title>
+<meta name="description" content="Nabby vs yt-dlp-webui: a comparison of two open-source yt-dlp frontends. Minimal Python/Flask vs full-featured Go-based dashboard with job management.">
+<link rel="canonical" href="https://nabby.pro/compare/nabby-vs-ytdlp-webui">
+<meta name="theme-color" content="#1c1c20">
+<link rel="icon" type="image/svg+xml" href="/static/favicons/b-n.svg">
+<link rel="alternate icon" href="/static/favicon.png" type="image/png" sizes="32x32">
+
+<meta property="og:site_name" content="Nabby">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nabby.pro/compare/nabby-vs-ytdlp-webui">
+<meta property="og:title" content="Nabby vs yt-dlp-webui">
+<meta property="og:description" content="Minimal Python vs feature-rich Go — two open-source yt-dlp frontends compared.">
+<meta property="og:image" content="https://nabby.pro/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nabby vs yt-dlp-webui">
+<meta name="twitter:description" content="Minimal Python vs feature-rich Go — two open-source yt-dlp frontends.">
+<meta name="twitter:image" content="https://nabby.pro/static/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="legal">
+
+<header class="nav">
+  <a href="/" class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Nabby</span>
+  </a>
+  <span class="nav-sub">Nabby vs yt-dlp-webui</span>
+</header>
+
+<main class="legal-main">
+  <h1>Nabby vs yt-dlp-webui</h1>
+  <p class="updated">Different languages, different scope, same engine.</p>
+
+  <h2>The short version</h2>
+  <p><strong>yt-dlp-webui</strong> (marcopeocchi) is a mature Go-based frontend with job management, dashboards, and configuration. <strong>Nabby</strong> is a minimal Python/Flask paste-and-grab UI with no persistent state. Both wrap yt-dlp; the resemblance stops there.</p>
+
+  <h2>At a glance</h2>
+  <table class="legal-table">
+    <thead><tr><th></th><th>Nabby</th><th>yt-dlp-webui</th></tr></thead>
+    <tbody>
+      <tr><td>Backend language</td><td>Python / Flask</td><td>Go</td></tr>
+      <tr><td>Resource footprint</td><td>~60 MB RAM</td><td>Lower (Go)</td></tr>
+      <tr><td>UI framework</td><td>Vanilla HTML/CSS/JS</td><td>React / SPA</td></tr>
+      <tr><td>Job management</td><td>No</td><td>Yes (list, cancel, retry)</td></tr>
+      <tr><td>Persistent downloads</td><td>No (1-hour TTL)</td><td>Yes</td></tr>
+      <tr><td>Dark theme</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Mobile UX</td><td>Yes, responsive</td><td>Yes, responsive</td></tr>
+      <tr><td>Docker image</td><td>Coming</td><td>Yes</td></tr>
+      <tr><td>Authentication</td><td>Hard-wall consent, no login</td><td>Optional basic-auth</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Choose yt-dlp-webui if…</h2>
+  <ul>
+    <li>You want visible job management: queues, retry buttons, download history.</li>
+    <li>You prefer a Go binary over a Python stack for your self-hosted services.</li>
+    <li>You want built-in basic authentication for a protected instance.</li>
+    <li>You're setting up a shared instance for a small group of trusted users.</li>
+  </ul>
+
+  <h2>Choose Nabby if…</h2>
+  <ul>
+    <li>You want the smallest possible footprint — one Flask app, one systemd service, done.</li>
+    <li>You deliberately don't want a dashboard, history, or jobs page cluttering the surface.</li>
+    <li>You want no files kept on disk after download for privacy or disk-space reasons.</li>
+    <li>You prefer vanilla HTML/CSS/JS over a React SPA.</li>
+  </ul>
+
+  <h2>Honest notes</h2>
+  <p>yt-dlp-webui is a more complete sysadmin tool. Nabby is closer to a web-form bookmarklet. If you want to leave the tab open and queue up ten downloads overnight, use yt-dlp-webui. If you want to grab one video from a text message your friend sent and move on, Nabby is faster to use.</p>
+
+  <p class="back"><a href="/">← back to Nabby</a> · <a href="/faq">FAQ</a> · <a href="/about">About</a></p>
+</main>
+
+</body>
+</html>
