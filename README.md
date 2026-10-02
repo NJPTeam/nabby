@@ -4,7 +4,7 @@
 
 Live at **[nabby.pro](https://nabby.pro)**.
 
-![Nabby](https://nabby.pro/static/og.png)
+![Nabby](static/og.png)
 
 ## What it is
 
